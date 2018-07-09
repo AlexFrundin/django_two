@@ -1,0 +1,51 @@
+{% extends 'bootstrap4/bootstrap4.html' %}
+{% load bootstrap4%}
+{% load staticfiles %}
+
+{% block bootstrap4_before_content %}
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Мои животные</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainMenu">
+      {% if user.is_authenticated %}
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ user.username }}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+              <a class="dropdown-item" href="#">Мой Профиль</a>
+              <a class="dropdown-item" href="#">Сменить пароль</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Выйти</a>
+            </div>
+          </li>
+        </ul>
+      {% else %}
+        <form class="form-inline ml-auto">
+          <a href="{% url 'sign-in' %}" class="btn btn-outline-secondary">Войти</a>
+        <a href="#" class="btn btn-primary ml-2">Зарегистрироваться</a>
+        </form>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+{% block bootstrap4_after_content%}
+
+<div class="navbar navbar-expand-sm navbar-dark bg-dark fixed-bottom">
+  <div class="container">
+
+      @CopyTM
+
+
+  </div>
+
+
+</div>
+
+{% endblock %}

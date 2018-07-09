@@ -1,0 +1,29 @@
+{% extends 'bootstrap4/bootstrap4.html' %}
+
+{% load bootstrap4 %}
+{% load staticfiles %}
+
+{% block bootstrap4_before_content%}
+{% endblock %}
+
+{% block bootstrap4_content %}
+<div class="container">
+  <h2 class="text-center col-m4 logo">
+    Registration
+  </h2>
+  <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <form action="" method="post">
+
+          {% csrf_token %}
+          {% bootstrap_form form %}
+
+        </form>
+        
+      </<div>
+  </div>
+</div>
+{% endblock %}
+
+{% block bootstrap4_after_content %}
+{% endblock %}

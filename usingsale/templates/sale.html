@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%load staticfiles%}
+{%block ext_style%}
+<!-- {{block.super}} -->
+<link rel="stylesheet" href="{%static 'css/mystyle.css'%}">
+{%endblock%}
+{%block content%}
+<div class="div_menu">
+  <ul class = "menu">
+    {%for catalog, key in alls.items%}
+      <li><a href="" >{{catalog}}</a>
+        <ul>
+          {%for key, value in key.items %}
+                  <li><a href= "{% url 'detail' key %}">{{value}}</a></li>
+          {%empty%}
+                  <li>К сожалению товаров нет</li>
+          {%endfor%}
+        </ul>
+      </li>
+      {%endfor%}
+      <li><a href="#">БУ</a>
+        <ul>
+          <li> <a href="#">Пока ничего нет</a>
+          </li>
+        </ul>
+
+      </li>
+  </ul>
+</div>
+{%endblock%}

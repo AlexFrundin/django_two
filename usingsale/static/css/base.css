@@ -1,0 +1,11 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 20px;
+  background: linear-gradient(to top, #fefcea, #f1da36);
+	/* background: url("../img/enot.jpeg"); */
+	/* background: url(" static '/img/1.png'") */
+}
