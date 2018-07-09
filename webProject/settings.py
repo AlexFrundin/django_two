@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
+    'django_icons',
     'userpet.apps.UserpetConfig',
     'using.apps.UsingConfig',
 ]
@@ -96,7 +97,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-
+LOGIN_REDIRECT_URL = '/'
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
