@@ -18,15 +18,7 @@ class Command(BaseCommand):
         for elem,mod in zip(obj,model):
             for p in elem:
                 del p.__dict__['_state']
-                # print(p.__dict__)
                 id = int(p.__dict__.pop('model_id'))
-                # print(p.__dict__)
-                # try:
-                #     print(m.Product.objects.filter(model=id).first())
-                # except:
-                #     print('Bad')
-
-                # mod.objects.create(**p.__dict__,model_id = m.Product.objects.filter(model_id=id).first())
                 intro = mod(**p.__dict__)
-                intro.model_id = m.Product.objects.get(model_id=id)
+                intro.model = m.Product.objects.get(model=id)
                 intro.save()
