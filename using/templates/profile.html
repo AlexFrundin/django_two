@@ -1,0 +1,10 @@
+{% extends 'bootstrap4/bootstrap4.html' %}
+
+
+
+{% block bootstrap4_content %}
+
+
+{% include 'include/abc_form.html' with abc_var_form=form form_name="Не много о вас, "|add:user.username button_name="Ок!"%}
+
+{% endblock %}
